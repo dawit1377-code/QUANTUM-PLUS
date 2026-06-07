@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>QUANTUM PLUS</title>
+    <title>Meaza Coffee</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=700&family=Poppins:wght=400;600&family=Noto+Sans+Ethiopic:wght=400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             /* PASTE YOUR LATEST DEPLOYED GOOGLE APPS Script EXECUTION LINK STRING DIRECTLY BELOW */
             --google-sheet-url: "https://script.google.com/macros/s/AKfycbzn-LocweeJ-muUeM0YSchXexILs-qU3HNalfuNpuNWX7EkH5uU0pnStYM9vBmgAUkE/exec";
             
-            --welcome-title-color: #0B7143;
+            --welcome-title-color: #0A2A5C;
             --welcome-subtitle-color: #74271D;
-            --hotel-en-1: "Quantum";
-            --hotel-en-2: "Plus Cafe & Resturant";
+            --hotel-en-1: "Meaza";
+            --hotel-en-2: "Coffee";
             --hotel-en-3: ""; 
-            --hotel-am-1: "ኳንተም";
-            --hotel-am-2: "ፕላስ ካፌ እና ሬስቶራንት";
+            --hotel-am-1: "መዓዛ";
+            --hotel-am-2: "ቡና";
             --hotel-am-3: "";
-            --word-1-color: #F4B123;
-            --word-2-color: #F4B123;
-            --word-3-color: #F4B123; 
+            --word-1-color: #0A2A5C;
+            --word-2-color: #0A2A5C;
+            --word-3-color: #0A2A5C; 
             --nav-bg-color: #ffffff;
-            --call-btn-color: #34424F;
-            --header-bg: #34424F;
+            --call-btn-color: #FEBE00;
+            --header-bg: #FEBE00;
             --page-bg: #ffffff;
             --price-color: #74271D;
             --ing-color: #74271D;
-            --brand-primary: #F4B123;
+            --brand-primary: #0A2A5C;
             --phone-number: "+251954954591";
-            --admin-user: "quantum";
+            --admin-user: "meaza";
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -37,7 +37,12 @@
         
         #pageLoader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; transition: opacity 0.4s ease; }
         .loader-welcome-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--welcome-title-color); margin-bottom: 4px; }
-        .loader-welcome-subtitle { font-family: 'Noto Sans Ethiopic', sans-serif; font-size: 18px; font-weight: 700; color: var(--welcome-subtitle-color); margin-bottom: 30px; }
+        .loader-welcome-subtitle { font-family: 'Noto Sans Ethiopic', sans-serif; font-size: 18px; font-weight: 700; color: var(--welcome-subtitle-color); margin-bottom: 25px; }
+        
+        /* Loading Page Logo Layout Style matching the header's aesthetic proportions */
+        .loader-logo-container { display: flex; align-items: center; justify-content: center; width: 95px; height: 95px; background: rgba(0,0,0,0.03); border-radius: 50%; padding: 4px; margin-bottom: 25px; border: 1px solid rgba(0,0,0,0.05); }
+        .loader-logo-img { height: 100%; width: 100%; object-fit: cover; border-radius: 50%; }
+        
         .spinner { width: 45px; height: 45px; border: 5px solid #eee; border-top: 5px solid var(--brand-primary); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .progress-text { font-size: 24px; font-weight: 700; color: var(--brand-primary); margin-top: 15px; font-family: 'Poppins', sans-serif; }
@@ -100,8 +105,14 @@
 <body onclick="APP.closeOnOutside(event)">
 
 <div id="pageLoader">
-    <h2 class="loader-welcome-title">Welcome To Quantum Plus Cafe & Resturant</h2>
-    <h3 class="loader-welcome-subtitle">እንኳን ወደ ኳንተም ፕላስ ካፌ እና ሬስቶራንት በደህና መጡ</h3>
+    <h2 class="loader-welcome-title">Welcome To Blue Cafe & Pizza</h2>
+    <h3 class="loader-welcome-subtitle">እንኳን ወደ ብሉ ካፌ እና ፒዛ በደህና መጡ</h3>
+    
+    <div class="loader-logo-container">
+        <img src="logo.jpg" class="loader-logo-img" alt="Logo" onerror="this.style.display='none'; document.getElementById('loaderLogoFallback').style.display='flex'">
+        <div id="loaderLogoFallback" style="display:none; height:100%; width:100%; background: rgba(0,0,0,0.05); border-radius: 50%; align-items: center; justify-content: center; font-size: 32px;">☕</div>
+    </div>
+
     <div class="spinner"></div>
     <div id="progressText" class="progress-text">1%</div>
 </div>
